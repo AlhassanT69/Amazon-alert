@@ -2,7 +2,6 @@ name: Daily Amazon Price Scraper
 
 on:
   schedule:
-    # متظبط على الساعة 6 المغرب بتوقيت جرينتش اللي هي 9 بالليل بتوقيت مصر الحالي (الصيفي)
     - cron: '0 18 * * *'
   workflow_dispatch: 
 
@@ -11,11 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # 1. حدثنا الإصدار لـ v4 عشان يشتغل على السيرفرات الجديدة بسلام
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
+    # 2. حدثنا الإصدار لـ v5 وهو الأحدث المتوافق حالياً
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
 
