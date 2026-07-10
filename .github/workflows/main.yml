@@ -2,7 +2,7 @@ name: Daily Amazon Price Scraper
 
 on:
   schedule:
-    - cron: '10 18 * * *'
+    - cron: '40 18 * * *'
   workflow_dispatch: 
 
 jobs:
