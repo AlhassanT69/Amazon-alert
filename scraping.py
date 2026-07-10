@@ -4,9 +4,12 @@ import requests
 class PriceScrap():
     def __init__(self,url):
         self.url=url
-        self.headers={
-            "Accept-Language":"en-US,en;q=0.9",
-            "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0"
+        self.headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+            "Connection": "keep-alive"
         }
         self.response=requests.get(url=self.url,headers=self.headers)
         self.web_page=self.response.text
